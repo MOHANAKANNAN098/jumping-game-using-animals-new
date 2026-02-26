@@ -1,0 +1,134 @@
+:root{--bg:#0b1220;--panel:#111827;--accent:#ffd166;--muted:#9aa4b2}
+*{box-sizing:border-box;font-family:Segoe UI, Roboto, Arial, sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#7ec8ff 0%, #a0e0ff 60%);overflow:hidden}
+#topbar{position:fixed;top:8px;right:8px;display:flex;align-items:center;gap:8px;z-index:40}
+#credits{background:#000;color:yellow;padding:6px 10px;border-radius:6px;font-weight:600}
+#soundToggle{background:#222;color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer}
+
+#scorebar{position:fixed;left:50%;transform:translateX(-50%);top:8px;background:rgba(0,0,0,0.6);color:#fff;padding:6px 12px;border-radius:8px;display:flex;gap:12px;align-items:center;z-index:40}
+#scoreLabel{font-weight:700}
+#scoreValue{min-width:40px;text-align:center}
+#hiValue{opacity:.9}
+
+#menu{position:fixed;left:20px;top:60px;width:420px;background:rgba(255,255,255,0.95);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.3);z-index:80}
+#menu h1{margin:0 0 12px;font-size:20px}
+.menu-inner{display:flex;gap:12px}
+.left,.right{flex:1}
+.animals label{display:block;padding:4px 0;cursor:pointer}
+.animals2 label{display:block;padding:4px 0;cursor:pointer}
+.name{margin-top:8px}
+.name input{width:100%;padding:8px;border-radius:6px;border:1px solid #ccc}
+.modes{display:flex;gap:8px;margin-top:12px}
+.modeBtn{padding:8px 12px;border-radius:6px;background:#eee;cursor:pointer;font-weight:700}
+.modeBtn.active{background:#ffd166}
+.startRow{margin-top:12px}
+#startBtn{padding:10px 16px;border-radius:8px;border:none;background:#2b8aee;color:#fff;font-weight:700;cursor:pointer}
+
+#game{position:fixed;left:0;top:0;width:100%;height:100%;display:block;z-index:5;pointer-events:auto}
+
+#overlay{position:fixed;left:0;top:0;width:100%;height:100%;display:flex;align-items:flex-start;justify-content:center;padding-top:12px;z-index:50}
+.hidden{display:none}
+/* Game Over panel fixed under top-right credit */
+#gameoverBox{background:rgba(0,0,0,0.92);color:#fff;padding:10px 12px;border-radius:8px;position:fixed;top:48px;right:12px;width:auto;max-width:320px;box-sizing:border-box;z-index:70}
+#gameoverBox h2{margin:0 0 6px;font-size:16px}
+#gameoverBox #finalScore{font-size:14px;margin-top:6px}
+#gameoverBox button{position:absolute;top:6px;right:8px;padding:6px 10px;border-radius:6px;border:none;background:#ffd166;font-weight:700;cursor:pointer}
+/* #gameLabel removed */
+
+#debugInfo{position:fixed;left:8px;bottom:8px;color:#fff;background:rgba(0,0,0,0.5);padding:6px;border-radius:6px;z-index:40;font-size:13px}
+
+/* Leaderboard overlay */
+#leaderboardOverlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);z-index:120}
+.leaderboardBox{background:linear-gradient(180deg,#fff,#f3f6f3);padding:18px;border-radius:12px;min-width:320px;max-width:420px;color:#102;box-shadow:0 18px 40px rgba(0,0,0,0.35)}
+.leaderboardBox h3{margin:0 0 8px;text-align:center}
+.leaderSummary{display:flex;justify-content:space-between;padding:8px 0;font-weight:800}
+.leaderboardBox ol{margin:8px 0;padding-left:22px;max-height:260px;overflow:auto}
+.leaderboardBox li{padding:6px 8px;border-bottom:1px solid rgba(0,0,0,0.05);font-weight:700}
+.leaderboardBox .big{width:110px}
+
+/* Theme specifics */
+body.mode-run{background:linear-gradient(180deg,#87c76f 0%, #cde7a9 60%)}
+body.mode-fly{background:linear-gradient(180deg,#6fb7ff 0%, #cfefff 60%)}
+body.mode-swim{background:linear-gradient(180deg,#033a6b 0%, #0b6ea5 60%)}
+
+@media (max-width:760px){#menu{width:92%;left:50%;transform:translateX(-50%);top:12px}}
+/* Monkey Escape - style.css
+   Responsive layout for canvas and UI
+*/
+:root{
+  --bg:#dff4df;
+  --ground:#7b5a34;
+  --accent:#3b7a57;
+  --ui: rgba(255,255,255,0.9);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Arial}
+body{background:linear-gradient(#a8e6cf,var(--bg));display:flex;align-items:center;justify-content:center}
+.container{position:relative;width:100%;max-width:900px;margin:18px}
+canvas{width:100%;height:60vh;background:linear-gradient(#9be6a8,#dff4df);display:block;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.15);position:relative;z-index:5;pointer-events:auto}
+
+#hud{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.leftPanel{position:absolute;left:10px;top:80px;background:transparent;color:#082;}
+.animalsList{background:rgba(255,255,255,0.9);padding:8px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+.animalItem{padding:6px 8px;font-weight:700;border-bottom:1px solid rgba(0,0,0,0.04)}
+.animalItem:last-child{border-bottom:0}
+.animalItem.selected{background:#ffd166;border-radius:6px}
+
+#hud > div{background:var(--ui);padding:6px 10px;border-radius:8px;font-weight:600}
+#scoreBar{display:flex;gap:10px;align-items:center}
+#scoreLabel{background:#ffd700;color:#000;padding:6px 10px;border-radius:6px;font-weight:900}
+#score{background:rgba(0,0,0,0.65);color:#fff;padding:6px 10px;border-radius:6px;font-weight:800}
+.small{background:var(--ui);border-radius:8px;padding:6px 8px;border:0;margin-left:6px}
+
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);color:white}
+.overlay.hidden{display:none}
+.overlay h1{font-size:42px;margin:6px}
+.overlay h2{font-size:32px;margin:6px}
+.overlay p{margin:6px 12px;text-align:center}
+.big{font-size:18px;padding:12px 22px;border-radius:10px;border:0;background:#ffd166;color:#40210f}
+.hint{font-size:13px;opacity:0.9}
+
+.jumpBtn{position:absolute;right:18px;bottom:30px;padding:16px 20px;border-radius:50px;background:#ffd166;border:0;font-weight:800;box-shadow:0 6px 12px rgba(0,0,0,0.15)}
+
+/* Mobile layout tweaks */
+@media (max-width:600px){
+  canvas{height:55vh}
+  .overlay h1{font-size:28px}
+  .big{padding:12px 18px}
+  #hud{flex-direction:row-reverse}
+}
+
+/* debug visuals */
+.debugBox{outline:2px dashed rgba(255,0,0,0.8)}
+
+/* small helper for centering text in canvas fallback */
+.centered{display:flex;align-items:center;justify-content:center}
+
+/* credit label */
+/* credit label top-right thick yellow/black */
+#credit{position:absolute;right:10px;top:12px;background:linear-gradient(90deg,#ffd700,#ffea00);color:#000;padding:8px 12px;border-radius:8px;font-weight:900;font-size:14px;border:3px solid #000;box-shadow:0 6px 12px rgba(0,0,0,0.18);}
+
+@media (max-width:480px){
+  #credit{right:8px;top:8px;font-size:12px;padding:5px 8px;border-width:2px}
+  .leftPanel{display:none}
+}
+
+/* Modal inner content */
+.modal-content{pointer-events:auto;background:linear-gradient(#ffffff,#f0f6f0);color:#102;border-radius:12px;padding:14px;min-width:320px;max-width:420px;box-shadow:0 14px 36px rgba(0,0,0,0.35);text-align:center}
+.modal-content input{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.12)}
+.modal-content .small{padding:8px 12px;border-radius:8px;background:#ffd166;border:0;font-weight:700}
+.modal-content .big{background:#3b7a57;color:#fff}
+
+.animalItem.selected{background:#ffd166;border-radius:6px}
+
+/* make selection modal above HUD/credit */
+#selectionModal{z-index:60}
+
+/* Allow clicks to reach left panel while keeping overlay buttons interactive */
+.overlay{pointer-events:none}
+.overlay .big, .overlay button, .overlay input{pointer-events:auto}
+
+/* ensure left panel and HUD are above canvas and can be clicked */
+.leftPanel{z-index:20}
+#hud{z-index:25}
+#credit{z-index:30}
