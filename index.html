@@ -3,154 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Monkey Escape – Animal Mode</title>
+  <title>Monkey Runner - Subway Style</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="topbar">
-    <div id="credits">Game was created by MOHANAKANNAN</div>
-    <div id="soundToggle" class="btn">🔊</div>
+    <div id="credits">Game by MOHANAKANNAN</div>
+    <div id="soundToggle">🔊</div>
   </div>
 
-  <div id="scorebar">sss
-    <div id="scoreLabel"><strong>SCORE</strong></div>
+  <div id="scorebar">
+    <div id="scoreLabel">SCORE</div>
     <div id="scoreValue">0</div>
-    <div id="hiValue">Hi: 0</div>
+    <div id="coinsLabel">COINS</div>
+    <div id="coinsValue">0</div>
   </div>
 
   <div id="menu">
-    <h1>Monkey Escape – Animal Mode</h1>
-    <div class="menu-inner">
-      <div class="left">
-        <div class="animals">
-          <label><input type="radio" name="animal1" value="elephant"> 🐘 Elephant</label>
-          <label><input type="radio" name="animal1" value="monkey" checked> 🐒 Monkey</label>
-          <label><input type="radio" name="animal1" value="dragon"> 🐉 Dragon</label>
-          <label><input type="radio" name="animal1" value="butterfly"> 🦋 Butterfly</label>
-          <label><input type="radio" name="animal1" value="snake"> 🐍 Snake</label>
-          <label><input type="radio" name="animal1" value="eagle"> 🦅 Eagle</label>
-          <label><input type="radio" name="animal1" value="dog"> 🐶 Dog</label>
-          <label><input type="radio" name="animal1" value="tiger"> 🐯 Tiger</label>
-        </div>
-        <div class="name"><input id="name1" placeholder="Name for Animal 1 (player)" maxlength="12"></div>
-      </div>
-
-      <div class="right">
-        <div class="animals2">
-          <label><input type="radio" name="animal2" value="elephant"> 🐘 Elephant</label>
-          <label><input type="radio" name="animal2" value="monkey"> 🐒 Monkey</label>
-          <label><input type="radio" name="animal2" value="dragon"> 🐉 Dragon</label>
-          <label><input type="radio" name="animal2" value="butterfly"> 🦋 Butterfly</label>
-          <label><input type="radio" name="animal2" value="snake"> 🐍 Snake</label>
-          <label><input type="radio" name="animal2" value="eagle"> 🦅 Eagle</label>
-          <label><input type="radio" name="animal2" value="dog" checked> 🐶 Dog</label>
-          <label><input type="radio" name="animal2" value="tiger"> 🐯 Tiger</label>
-        </div>
-        <div class="name"><input id="name2" placeholder="Name for Animal 2 (chaser)" maxlength="12"></div>
-      </div>
+    <h1>🐒 MONKEY RUNNER</h1>
+    <p>Subway Surfers Style!</p>
+    <div class="animals">
+      <label><input type="radio" name="animal" value="monkey" checked> 🐒 Monkey</label>
+      <label><input type="radio" name="animal" value="elephant"> 🐘 Elephant</label>
+      <label><input type="radio" name="animal" value="tiger"> 🐯 Tiger</label>
+      <label><input type="radio" name="animal" value="eagle"> 🦅 Eagle</label>
     </div>
-
-    <div class="modes">
-      <div class="modeBtn active" data-mode="run">RUN</div>
-      <div class="modeBtn" data-mode="fly">FLY</div>
-      <div class="modeBtn" data-mode="swim">SWIM</div>
-    </div>
-    <div class="startRow">
-      <button id="startBtn">START GAME</button>
-    </div>
+    <button id="startBtn">START GAME</button>
+    <div class="controls">Use ← → Arrow Keys to Move</div>
   </div>
 
   <canvas id="game"></canvas>
 
   <div id="overlay" class="hidden">
-    <div id="gameoverBox">
-      
-      <div id="finalScore">Score: 0</div>
-      <button id="restartBtn">Restart</button>
-    </div>
+    <h2>GAME OVER!</h2>
+    <div id="finalScore">Score: 0</div>
+    <div id="finalCoins">Coins: 0</div>
+    <button id="restartBtn">PLAY AGAIN</button>
   </div>
-
-  <div id="debugInfo" class="hidden"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
- 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Monkey Escape – Animal Mode</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="topbar">
-    <div id="credits">Game was created by MOHANAKANNAN</div>
-    <div id="soundToggle" class="btn">🔊</div>
-  </div>
-
-  <div id="scorebar">sss
-    <div id="scoreLabel"><strong>SCORE</strong></div>
-    <div id="scoreValue">0</div>
-    <div id="hiValue">Hi: 0</div>
-  </div>
-
-  <div id="menu">
-    <h1>Monkey Escape – Animal Mode</h1>
-    <div class="menu-inner">
-      <div class="left">
-        <div class="animals">
-          <label><input type="radio" name="animal1" value="elephant"> 🐘 Elephant</label>
-          <label><input type="radio" name="animal1" value="monkey" checked> 🐒 Monkey</label>
-          <label><input type="radio" name="animal1" value="dragon"> 🐉 Dragon</label>
-          <label><input type="radio" name="animal1" value="butterfly"> 🦋 Butterfly</label>
-          <label><input type="radio" name="animal1" value="snake"> 🐍 Snake</label>
-          <label><input type="radio" name="animal1" value="eagle"> 🦅 Eagle</label>
-          <label><input type="radio" name="animal1" value="dog"> 🐶 Dog</label>
-          <label><input type="radio" name="animal1" value="tiger"> 🐯 Tiger</label>
-        </div>
-        <div class="name"><input id="name1" placeholder="Name for Animal 1 (player)" maxlength="12"></div>
-      </div>
-
-      <div class="right">
-        <div class="animals2">
-          <label><input type="radio" name="animal2" value="elephant"> 🐘 Elephant</label>
-          <label><input type="radio" name="animal2" value="monkey"> 🐒 Monkey</label>
-          <label><input type="radio" name="animal2" value="dragon"> 🐉 Dragon</label>
-          <label><input type="radio" name="animal2" value="butterfly"> 🦋 Butterfly</label>
-          <label><input type="radio" name="animal2" value="snake"> 🐍 Snake</label>
-          <label><input type="radio" name="animal2" value="eagle"> 🦅 Eagle</label>
-          <label><input type="radio" name="animal2" value="dog" checked> 🐶 Dog</label>
-          <label><input type="radio" name="animal2" value="tiger"> 🐯 Tiger</label>
-        </div>
-        <div class="name"><input id="name2" placeholder="Name for Animal 2 (chaser)" maxlength="12"></div>
-      </div>
-    </div>
-
-    <div class="modes">
-      <div class="modeBtn active" data-mode="run">RUN</div>
-      <div class="modeBtn" data-mode="fly">FLY</div>
-      <div class="modeBtn" data-mode="swim">SWIM</div>
-    </div>
-    <div class="startRow">
-      <button id="startBtn">START GAME</button>
-    </div>
-  </div>
-
-  <canvas id="game"></canvas>
-
-  <div id="overlay" class="hidden">
-    <div id="gameoverBox">
-      
-      <div id="finalScore">Score: 0</div>
-      <button id="restartBtn">Restart</button>
-    </div>
-  </div>
-
-  <div id="debugInfo" class="hidden"></div>
-
-  <script src="script.js"></script>
-</body>
-</html>
- 
